@@ -1,6 +1,6 @@
 # Workflow with Git, Gulp, and Browserify
 
-##Dependency Notes
+##Dependency Setup Notes/Thought Process
 
 ###gulpjs/gulp-util
 ####src: https://github.com/gulpjs/gulp-util
@@ -82,6 +82,7 @@ The style option to expanded is so it is readable. All output style values inclu
 nested | expanded | compact | compressed
 
 ###gulp default task
+####src: https://github.com/gulpjs/gulp
 
 A gulp.task that is set to 'default' so it can be called just by running:
 
@@ -90,4 +91,9 @@ A gulp.task that is set to 'default' so it can be called just by running:
 in the terminal
 
 It runs the listed array (second param) in that order all at once.
+
+###gulp watch
+####src: https://github.com/gulpjs/gulp
+
+A gulp.task that does a gulp.watch for the plugins changes. The thing to note here is that even though in the compass plugin you can src the style.scss because of imports you cannot do that here. So, I added the src to 'components/sass/*.scss' to grab all the difference scss file components so that it can accurately watch and change all the and any edits.
 

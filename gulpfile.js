@@ -63,5 +63,11 @@ gulp.task('compass', function() {
         .pipe(gulp.dest('builds/development/css'))
 });
 
+gulp.task('watch', function() {
+    gulp.watch('coffeeSources', ['coffee']);
+    gulp.watch('jsSources', ['js']);
+    gulp.watch('components/sass/*.scss', ['compass']); // this *.scss watches for each and every .scss
+});
+
 // this if ran in the terminal as 'gulp' will run the array list of tasks
 gulp.task('default', ['coffee', 'js', 'compass']);
