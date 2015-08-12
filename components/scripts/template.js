@@ -1,5 +1,5 @@
 $(function() {
-    var Mustache = require('mustache'); // browserify, I believe
+    var Mustache = require('mustache'); // browserify
 
     $.getJSON('js/data.json', function() {
         var template = $('#speakerstpl').html();
