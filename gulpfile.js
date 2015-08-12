@@ -62,3 +62,6 @@ gulp.task('compass', function() {
         .on('error', gutil.log)
         .pipe(gulp.dest('builds/development/css'))
 });
+
+// this if ran in the terminal as 'gulp' will run the array list of tasks
+gulp.task('default', ['coffee', 'js', 'compass']);
