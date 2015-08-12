@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     coffee = require('gulp-coffee'),
     browserify = require('gulp-browserify'),
+    compass = require('gulp-compass'),
     concat = require('gulp-concat');
 
 var coffeeSources = ['components/coffee/tagline.coffee'];
@@ -11,6 +12,7 @@ var jsSources = [
     'components/scripts/tagline.js',
     'components/scripts/template.js'
 ];
+var sassSources = ['components/sass/style.scss'];
 
 
 gulp.task('coffee', function() {
@@ -49,3 +51,14 @@ array of what js files have been authored) and concats them together into one
 file and puts the script.js concat file into the destination of builds/development/js
 folder. To run this task only in the terminal it is: gulp js
 */
+
+gulp.task('compass', function() {
+    gulp.src('sassSources')
+        .pipe(compass({
+            sass: 'components/sass',
+            image: 'builds/development/images',
+            style: 'expanded'
+        }))
+        .on('error', gutil.log)
+        .pipe(gulp.dest('builds/development/css'))
+});

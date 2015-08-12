@@ -55,3 +55,26 @@ This requires a couple changes to incorporate mustache and jquery libraries.
 This was added to the gulpfile.js within the js concat task run code block.
 With this added to the gulpfile.js, the coffeescript file requiring jquery, and the template.js
 file requiring mustache--browserify will now add these libraries dynamically.
+
+###gulpjs/gulp-compass
+####src: http://sass-lang.com/documentation/file.SASS_REFERENCE.html
+
+	var compass = require('gulp-compass')
+
+npm install:
+
+	npm install --save-dev gulp-compass
+
+I have set up a gulp.task for compass and I am using a compass object instead of a 
+Ruby config file. The style.scss has imports for all other sister scss files so the sassSources
+file is compiled via the language syntax. So, the sassSources is used in the gulp.task to pipe into
+the compass object. 
+
+Options in {}
+
+	sass: 'components/sass',
+	images: 'builds/development/images',
+	style: 'expanded'
+
+The style option to expanded is so it is readable. All output style values include -
+nested | expanded | compact | compressed
