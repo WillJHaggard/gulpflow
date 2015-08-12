@@ -95,5 +95,17 @@ It runs the listed array (second param) in that order all at once.
 ###gulp watch
 ####src: https://github.com/gulpjs/gulp
 
-A gulp.task that does a gulp.watch for the plugins changes. The thing to note here is that even though in the compass plugin you can src the style.scss because of imports you cannot do that here. So, I added the src to 'components/sass/*.scss' to grab all the difference scss file components so that it can accurately watch and change all the and any edits.
+A gulp.task that does a gulp.watch for the plugins changes. The thing to note here is that even though in the compass plugin you can src the style.scss because of imports you cannot do that here. So, I added the src to 'components/sass/*.scss' to grab all the difference scss file components so that it can accurately watch and change all the and any edits. This can be stopped in the terminal by pressing control+c.
 
+###gulp connect
+####src: https://www.npmjs.com/package/gulp-connect
+
+A gulp.task using connect.server for livereload. Installed from terminal like above npm packages.
+
+	npm install --save-dev gulp-connect
+
+and
+
+	.pipe(connect.reload())
+
+was placed at the bottom of the anon functions for the compass and js tasks. The coffee task doesn't need this pipe method because it is used through the js gulp.task.
