@@ -14,6 +14,7 @@ var jsSources = [
     'components/scripts/template.js'
 ];
 var sassSources = ['components/sass/style.scss'];
+var htmlSources = ['builds/development/*.html'];
 
 
 gulp.task('coffee', function() {
@@ -66,14 +67,20 @@ gulp.task('compass', function() {
         .pipe(connect.reload())
 });
 
+gulp.task('html', function() {
+    gulp.src('htmlSources')
+        .pipe(connect.reload())
+});
+
 gulp.task('watch', function() {
     gulp.watch('coffeeSources', ['coffee']);
     gulp.watch('jsSources', ['js']);
     gulp.watch('components/sass/*.scss', ['compass']); // this *.scss watches for each and every .scss
+    gulp.watch('htmlSources', ['html']);
 });
 
 // this if ran in the terminal as 'gulp' will run the array list of tasks
-gulp.task('default', ['coffee', 'js', 'compass', 'connect', 'watch']);
+gulp.task('default', ['html', 'coffee', 'js', 'compass', 'connect', 'watch']);
 
 
 gulp.task('connect', function() {
