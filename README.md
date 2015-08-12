@@ -109,3 +109,19 @@ and
 	.pipe(connect.reload())
 
 was placed at the bottom of the anon functions for the compass and js tasks. The coffee task doesn't need this pipe method because it is used through the js gulp.task.
+
+###gulp task for html and json
+
+	gulp.task('html', function() {
+    gulp.src('htmlSources')
+        .pipe(connect.reload())
+	});
+
+	gulp.task('json', function() {
+    gulp.src('builds/development/js/*.json')
+        .pipe(connect.reload())
+	});
+
+A gulp.task was created to watch and reload with gulp connect so the default task is now complete.
+
+

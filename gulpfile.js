@@ -48,6 +48,11 @@ gulp.task('js', function() {
         .pipe(connect.reload()) // processes both js and coffee changes; relies on connect task at bottom
 });
 
+gulp.task('json', function() {
+    gulp.src('builds/development/js/*.json')
+        .pipe(connect.reload())
+});
+
 /* 
 The above creates a gulp task that takes the src of jsSources (the previously declared
 array of what js files have been authored) and concats them together into one
@@ -80,7 +85,7 @@ gulp.task('watch', function() {
 });
 
 // this if ran in the terminal as 'gulp' will run the array list of tasks
-gulp.task('default', ['html', 'coffee', 'js', 'compass', 'connect', 'watch']);
+gulp.task('default', ['html', 'coffee', 'json', 'js', 'compass', 'connect', 'watch']);
 
 
 gulp.task('connect', function() {
