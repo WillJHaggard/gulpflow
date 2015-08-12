@@ -118,10 +118,11 @@ was placed at the bottom of the anon functions for the compass and js tasks. The
 	});
 
 	gulp.task('json', function() {
-    gulp.src('builds/development/js/*.json')
+    gulp.src('jsonSources')
         .pipe(connect.reload())
 	});
 
-A gulp.task was created to watch and reload with gulp connect so the default task is now complete.
+A gulp.task was created to watch (updated watch tasks, created array variables) and reload with gulp connect so the default task is now complete.
+
 
 
