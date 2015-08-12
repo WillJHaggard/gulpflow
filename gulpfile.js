@@ -70,4 +70,4 @@ gulp.task('watch', function() {
 });
 
 // this if ran in the terminal as 'gulp' will run the array list of tasks
-gulp.task('default', ['coffee', 'js', 'compass']);
+gulp.task('default', ['coffee', 'js', 'compass', 'watch']);
