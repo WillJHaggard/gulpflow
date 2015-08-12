@@ -1,15 +1,18 @@
-// this file was created by terminal prompt: npm init -- then following the questions and creating it in the pwd
 {
-    "name": "gulpflow",
-    "version": "0.0.1",
-    "description": "A project to showcase a git, gulp, browserify workflow",
-    "main": "index.js", // or app.js; change it to whatever
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    }, // there won't be tests for this
-    "repository": {
-        "type": "git",
-        "url": "?.git" // this is because I have not created a url for the repo yet.
-    },
-    "author": "Will J. Haggard"
+  "name": "gulpflow",
+  "version": "0.0.1",
+  "description": "A project to showcase a git, gulp, browserify workflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Will J. Haggard",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6"
+  }
 }
