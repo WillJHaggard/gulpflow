@@ -1,1 +1,1 @@
-# Workflow with Git, Gulp, and Broweserify
+# Workflow with Git, Gulp, and Browserify
