@@ -124,5 +124,44 @@ was placed at the bottom of the anon functions for the compass and js tasks. The
 
 A gulp.task was created to watch (updated watch tasks, created array variables) and reload with gulp connect so the default task is now complete.
 
+###created if statement for production and development environments
+
+in gulpfile.js - restructuring and addition of sassStyle variable to change from expanded to compressed upon production (css minification):
+
+	
+	/****************/
+	var env,
+	    coffeeSources,
+	    jsSources,
+	    sassSources,
+	    htmlSources,
+	    jsonSources,
+	    outputDir,
+	    sassStyle;
+
+	env = process.env.NODE_ENV || 'development';
+
+	if (env === 'development') {
+	    outputDir = 'builds/development/';
+	    sassStyle = 'expanded';
+	} else {
+	    outputDir = 'builds/production/';
+	    sassStyle = 'compressed';
+	}
+	/****************/
+	coffeeSources = ['components/coffee/tagline.coffee'];
+	jsSources = [
+	    'components/scripts/rclick.js',
+	    'components/scripts/pixgrid.js',
+	    'components/scripts/tagline.js',
+	    'components/scripts/template.js'
+	];
+	sassSources = ['components/sass/style.scss'];
+	htmlSources = [outputDir + '*.html'];
+	jsonSources = [outputDir + 'js/*.json'];
+	
+
+
+
 
 
